@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+        }
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            background-color: #333;
+            position: relative;
+        }
+        .child{
+            width: 50px;
+            height: 50px;
+            background-color: orange;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="child"></div>
+    </div>
+    <noscript></noscript>
+    <script>
+        document.querySelector('.wrapper').addEventListener("mousemove",function(e){
+            console.log("x="+e.clientX);
+            console.log("y="+e.clientY);
+            document.querySelector(".child").style.left=e.clientX+"px";
+            document.querySelector(".child").style.top=e.clientY+"px";
+        })
+    </script>
+</body>
+</html>
